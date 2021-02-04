@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/listParkir">
+
+    <fragment
+        android:id="@+id/listParkir"
+        android:name="com.example.parkiranmall.Fragments.ListParkir"
+        android:label="Data Parkir"
+        tools:layout="@layout/fragment_list_parkir" >
+        <action
+            android:id="@+id/action_listParkir_to_tambahFragments"
+            app:destination="@id/tambahFragments" />
+        <action
+            android:id="@+id/action_listParkir_to_updateParkir"
+            app:destination="@id/updateParkir" />
+    </fragment>
+    <fragment
+        android:id="@+id/tambahFragments"
+        android:name="com.example.parkiranmall.Fragments.TambahFragments"
+        android:label="Tambah Data"
+        tools:layout="@layout/fragment_tambah_fragments" >
+        <action
+            android:id="@+id/action_tambahFragments_to_listParkir"
+            app:destination="@id/listParkir" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateParkir"
+        android:name="com.example.parkiranmall.Fragments.UpdateParkir"
+        android:label="Ubah Data"
+        tools:layout="@layout/fragment_update_parkir" >
+        <action
+            android:id="@+id/action_updateParkir_to_listParkir"
+            app:destination="@id/listParkir" />
+        <argument
+            android:name="currentParkir"
+            app:argType="com.example.parkiranmall.Data.Parkir" />
+    </fragment>
+</navigation>
